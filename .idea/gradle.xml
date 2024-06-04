@@ -9,12 +9,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/api" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/database" />
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/news-main" />
-            <option value="$PROJECT_DIR$/news-data" />
-            <option value="$PROJECT_DIR$/news_api" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

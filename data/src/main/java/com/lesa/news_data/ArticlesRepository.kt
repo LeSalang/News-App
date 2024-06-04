@@ -6,6 +6,8 @@ import com.lesa.news_data.models.Article
 import com.lesa.newsapi.NewsApi
 import com.lesa.newsapi.models.ArticleDTO
 import com.lesa.newsapi.models.ResponseDTO
+import jakarta.inject.Inject
+import jakarta.inject.Singleton
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
@@ -17,7 +19,8 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.merge
 import kotlinx.coroutines.flow.onEach
 
-class ArticlesRepository(
+@Singleton
+class ArticlesRepository @Inject constructor(
     private val database: NewsDatabase,
     private val api: NewsApi,
 ) {
