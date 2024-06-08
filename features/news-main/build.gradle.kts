@@ -62,4 +62,6 @@ dependencies {
 
     implementation(libs.androidx.runtime)
 
+    implementation(libs.coil.core)
+    implementation(libs.coil.compose)
 }
