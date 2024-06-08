@@ -16,7 +16,8 @@ class NewsDatabase internal constructor(private val database: NewsRoomDatabase) 
 
 @Database(
     entities = [ArticleDBO::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 @TypeConverters(Converters::class)
 internal abstract class NewsRoomDatabase : RoomDatabase() {

@@ -8,22 +8,22 @@ import java.util.Date
 @Serializable
 data class ArticleDTO(
     @SerialName("source")
-    val source: SourceDTO,
+    val sourceDTO: SourceDTO?,
     @SerialName("author")
-    val author: String,
+    val author: String?,
     @SerialName("title")
     val title: String,
     @SerialName("description")
-    val description: String,
+    val description: String?,
     @SerialName("url")
-    val url: String,
+    val url: String?,
     @SerialName("urlToImage")
-    val urlToImage: String,
+    val urlToImage: String?,
     @SerialName("publishedAt")
     @Serializable(with = DateTimeUTCSerializer::class)
-    val publishedAt: Date,
+    val publishedAt: Date?,
     @SerialName("content")
-    val content: String
+    val content: String?
 )
 
 

@@ -16,4 +16,5 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.retrofit)
     implementation(libs.retrofit.adapters.result)
+    implementation(libs.okhttp.logging.interceptor)
 }

@@ -12,7 +12,6 @@ android {
     defaultConfig {
         minSdk = 24
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -25,6 +24,11 @@ android {
             )
         }
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.14"
+    }
+
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -49,9 +53,13 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.dagger.hilt.android)
     implementation(libs.kotlinx.coroutines.android)
-    implementation(platform(libs.androidx.compose.bom))
+
+    implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)
     implementation(project(":data"))
+    implementation(project(":uikit"))
+
+    implementation(libs.androidx.runtime)
+
 }

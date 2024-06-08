@@ -10,6 +10,7 @@ import com.lesa.newsapi.utils.NewsApiKeyInterceptor
 import com.skydoves.retrofit.adapters.result.ResultCallAdapterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.create
@@ -26,7 +27,7 @@ interface NewsApi {
         @Query(Q) query: String? = null,
         @Query(FROM) from: Date? = null,
         @Query(TO) to: Date? = null,
-        @Query(LANGUAGE) language: List<Language>? = null,
+        @Query(LANGUAGE) language: List<@JvmSuppressWildcards Language>? = null,
         @Query(SORT_BY) sortBy: SortBy? = null,
         @Query(PAGE_SIZE) @IntRange(from = 1, to = 100) pageSize: Int = 100,
         @Query(PAGE) @IntRange(from = 1) page: Int = 1,
@@ -53,7 +54,7 @@ private fun retrofit(
     json: Json = Json,
     okHttpClient: OkHttpClient?,
 ): Retrofit {
-    val jsonConverterFactory = json.asConverterFactory(MediaType.get("application/json"))
+    val jsonConverterFactory = json.asConverterFactory("application/json".toMediaType())
 
     val modifiedOokHttpClient = (okHttpClient?.newBuilder() ?: OkHttpClient.Builder())
         .addInterceptor(NewsApiKeyInterceptor(apiKey))

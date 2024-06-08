@@ -10,23 +10,22 @@ import java.util.Date
 data class ArticleDBO(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
-    @ColumnInfo("source")
-    @Embedded(prefix = "source.")
-    val sourceDBO: SourceDBO,
+    @Embedded(prefix = "source-")
+    val sourceDBO: SourceDBO?,
     @ColumnInfo("author")
-    val author: String,
+    val author: String?,
     @ColumnInfo("title")
-    val title: String,
+    val title: String?,
     @ColumnInfo("description")
-    val description: String,
+    val description: String?,
     @ColumnInfo("url")
-    val url: String,
+    val url: String?,
     @ColumnInfo("urlToImage")
-    val urlToImage: String,
+    val urlToImage: String?,
     @ColumnInfo("publishedAt")
-    val publishedAt: Date,
+    val publishedAt: Date?,
     @ColumnInfo("content")
-    val content: String
+    val content: String?
 )
 
 

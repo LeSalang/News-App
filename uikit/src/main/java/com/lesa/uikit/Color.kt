@@ -1,4 +1,4 @@
-package com.lesa.newsapp.ui.theme
+package com.lesa.uikit
 
 import androidx.compose.ui.graphics.Color
 

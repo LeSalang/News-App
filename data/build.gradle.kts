@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+    alias(libs.plugins.kapt)
+
 }
 
 android {
@@ -39,6 +42,11 @@ dependencies {
 
     implementation(project(":database"))
     implementation(project(":api"))
+    implementation(project(":common"))
 
     implementation(libs.jakarta.inject)
+
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
+    implementation(libs.androidx.runtime)
 }
