@@ -21,6 +21,6 @@ internal fun <T : Any> Result<T>.toRequestResult(): RequestResult<T> {
     return when {
         isSuccess -> RequestResult.Success(getOrThrow())
         isFailure -> RequestResult.Error()
-        else -> throw IllegalStateException("Result must be either success or failure")
+        else -> error("Result must be either success or failure")
     }
 }
