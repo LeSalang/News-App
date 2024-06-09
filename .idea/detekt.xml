@@ -3,7 +3,7 @@
   <component name="DetektPluginSettings">
     <option name="configurationFiles">
       <list>
-        <option value="$PROJECT_DIR$/default-detekt-config.yml" />
+        <option value="$PROJECT_DIR$/detekt-config.yml" />
       </list>
     </option>
     <option name="enableDetekt" value="true" />
