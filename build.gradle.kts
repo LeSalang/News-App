@@ -15,7 +15,9 @@ plugins {
 allprojects.onEach {
     it.afterEvaluate {
         with(project.plugins) {
-            if (hasPlugin(libs.plugins.jetbrains.kotlin.android.get().pluginId) || hasPlugin(libs.plugins.jetbrains.kotlin.jvm.get().pluginId)) {
+            if (hasPlugin(libs.plugins.jetbrains.kotlin.android.get().pluginId) ||
+                hasPlugin(libs.plugins.jetbrains.kotlin.jvm.get().pluginId)
+            ) {
                 apply(libs.plugins.detekt.get().pluginId)
                 extensions.configure<DetektExtension> {
                     config.setFrom(rootProject.files("detekt-config.yml"))
