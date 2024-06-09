@@ -45,5 +45,4 @@ object AppModule {
     fun provideLogger(): Logger {
         return androidLogcatLogger()
     }
-
 }

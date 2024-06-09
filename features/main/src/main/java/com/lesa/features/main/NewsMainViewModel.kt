@@ -1,9 +1,9 @@
-package com.lesa.features.news_main
+package com.lesa.features.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.lesa.features.news_main.models.ArticleUI
-import com.lesa.news_data.RequestResult
+import com.lesa.data.RequestResult
+import com.lesa.features.main.models.ArticleUI
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -11,7 +11,6 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 import javax.inject.Provider
-import javax.inject.Singleton
 
 @HiltViewModel
 internal class NewsMainViewModel @Inject constructor(

@@ -1,11 +1,10 @@
-package com.lesa.features.news_main
+package com.lesa.features.main
 
-import com.lesa.features.news_main.models.ArticleUI
-import com.lesa.features.news_main.models.SourceUI
-import com.lesa.news_data.ArticlesRepository
-import com.lesa.news_data.RequestResult
-import com.lesa.news_data.map
-import com.lesa.news_data.models.Article
+import com.lesa.data.ArticlesRepository
+import com.lesa.data.RequestResult
+import com.lesa.data.map
+import com.lesa.data.models.Article
+import com.lesa.features.main.models.ArticleUI
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

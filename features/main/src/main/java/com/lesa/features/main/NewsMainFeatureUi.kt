@@ -1,14 +1,12 @@
-package com.lesa.features.news_main
+package com.lesa.features.main
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
@@ -30,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import coil.compose.AsyncImagePainter
-import com.lesa.features.news_main.models.ArticleUI
+import com.lesa.features.main.models.ArticleUI
 import com.lesa.uikit.NewsTheme
 
 @Composable
@@ -56,7 +54,7 @@ internal fun NewsMainScreen(
 }
 
 @Composable
-internal fun ErrorView()  {
+internal fun ErrorView() {
     Text(
         text = "Error",
         color = MaterialTheme.colorScheme.onError,
@@ -114,7 +112,6 @@ private fun Article(
                 )
                 Spacer(modifier = Modifier.size(4.dp))
             }
-
         }
         Column(
             modifier = Modifier.padding(8.dp)
@@ -134,7 +131,6 @@ private fun Article(
             )
         }
     }
-
 }
 
 private class ArticlePreviewProvider : PreviewParameterProvider<ArticleUI> {

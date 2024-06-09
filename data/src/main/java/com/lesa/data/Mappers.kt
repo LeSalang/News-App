@@ -1,9 +1,9 @@
-package com.lesa.news_data
+package com.lesa.data
 
+import com.lesa.data.models.Article
+import com.lesa.data.models.Source
 import com.lesa.database.models.ArticleDBO
 import com.lesa.database.models.SourceDBO
-import com.lesa.news_data.models.Article
-import com.lesa.news_data.models.Source
 import com.lesa.newsapi.models.ArticleDTO
 import com.lesa.newsapi.models.SourceDTO
 import java.util.UUID

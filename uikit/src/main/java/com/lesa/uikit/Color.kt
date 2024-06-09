@@ -1,3 +1,5 @@
+@file:Suppress("MagicNumber")
+
 package com.lesa.uikit
 
 import androidx.compose.ui.graphics.Color

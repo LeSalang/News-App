@@ -83,6 +83,6 @@ dependencies {
     implementation(project(":common"))
     implementation(project(":data"))
     implementation(project(":database"))
-    implementation(project(":features:news-main"))
+    implementation(project(":features:main"))
     implementation(project(":uikit"))
 }

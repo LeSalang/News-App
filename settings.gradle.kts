@@ -23,7 +23,7 @@ rootProject.name = "NewsApp"
 include(":app")
 include(":api")
 include(":database")
-include(":features:news-main")
+include(":features:main")
 include(":data")
 include(":common")
 include(":uikit")

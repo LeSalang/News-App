@@ -12,5 +12,4 @@ internal class NewsApiKeyInterceptor(private val apiKey: String) : Interceptor {
                 .build()
         )
     }
-
 }

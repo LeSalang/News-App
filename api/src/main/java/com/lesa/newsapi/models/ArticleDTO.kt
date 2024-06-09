@@ -25,6 +25,3 @@ data class ArticleDTO(
     @SerialName("content")
     val content: String?
 )
-
-
-

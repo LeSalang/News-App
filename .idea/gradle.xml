@@ -15,7 +15,7 @@
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/database" />
             <option value="$PROJECT_DIR$/features" />
-            <option value="$PROJECT_DIR$/features/news-main" />
+            <option value="$PROJECT_DIR$/features/main" />
             <option value="$PROJECT_DIR$/uikit" />
           </set>
         </option>

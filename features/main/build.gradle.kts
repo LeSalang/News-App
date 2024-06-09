@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.lesa.features.news_main"
+    namespace = "com.lesa.features.main"
     compileSdk = 34
 
     defaultConfig {
@@ -27,7 +27,6 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.14"
     }
-
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

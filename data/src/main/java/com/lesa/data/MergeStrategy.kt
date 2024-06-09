@@ -1,4 +1,4 @@
-package com.lesa.news_data
+package com.lesa.data
 
 interface MergeStrategy<E> {
 
@@ -7,24 +7,26 @@ interface MergeStrategy<E> {
 
 internal class DefaultMergeStrategy<T : Any> : MergeStrategy<RequestResult<T>> {
 
+    @Suppress("CyclomaticComplexMethod", "ReturnCount")
     override fun merge(
-        cache: RequestResult<T>,
-        server: RequestResult<T>,
+        right: RequestResult<T>,
+        left: RequestResult<T>,
     ): RequestResult<T> {
         return when {
-            cache is RequestResult.Error && server is RequestResult.Error -> return merge(cache, server)
-            cache is RequestResult.Error && server is RequestResult.InProgress -> return merge(cache, server)
-            cache is RequestResult.Error && server is RequestResult.Success -> return merge(cache, server)
-            cache is RequestResult.InProgress && server is RequestResult.Error -> return merge(cache, server)
-            cache is RequestResult.InProgress && server is RequestResult.InProgress -> return merge(cache, server)
-            cache is RequestResult.InProgress && server is RequestResult.Success -> return merge(cache, server)
-            cache is RequestResult.Success && server is RequestResult.Error -> return merge(cache, server)
-            cache is RequestResult.Success && server is RequestResult.InProgress -> return merge(cache, server)
-            cache is RequestResult.Success && server is RequestResult.Success -> return merge(cache, server)
+            right is RequestResult.Error && left is RequestResult.Error -> return merge(right, left)
+            right is RequestResult.Error && left is RequestResult.InProgress -> return merge(right, left)
+            right is RequestResult.Error && left is RequestResult.Success -> return merge(right, left)
+            right is RequestResult.InProgress && left is RequestResult.Error -> return merge(right, left)
+            right is RequestResult.InProgress && left is RequestResult.InProgress -> return merge(right, left)
+            right is RequestResult.InProgress && left is RequestResult.Success -> return merge(right, left)
+            right is RequestResult.Success && left is RequestResult.Error -> return merge(right, left)
+            right is RequestResult.Success && left is RequestResult.InProgress -> return merge(right, left)
+            right is RequestResult.Success && left is RequestResult.Success -> return merge(right, left)
             else -> error("Unimplemented brunch")
         }
     }
 
+    @Suppress("UNUSED_PARAMETER")
     private fun merge(
         cache: RequestResult.Error<T>,
         server: RequestResult.Error<T>
@@ -39,6 +41,7 @@ internal class DefaultMergeStrategy<T : Any> : MergeStrategy<RequestResult<T>> {
         return RequestResult.Error(data = cache.data ?: server.data, error = cache.error)
     }
 
+    @Suppress("UNUSED_PARAMETER")
     private fun merge(
         cache: RequestResult.Error<T>,
         server: RequestResult.Success<T>
@@ -64,6 +67,7 @@ internal class DefaultMergeStrategy<T : Any> : MergeStrategy<RequestResult<T>> {
         }
     }
 
+    @Suppress("UNUSED_PARAMETER")
     private fun merge(
         cache: RequestResult.InProgress<T>,
         server: RequestResult.Success<T>
@@ -78,6 +82,7 @@ internal class DefaultMergeStrategy<T : Any> : MergeStrategy<RequestResult<T>> {
         return RequestResult.Error(data = cache.data, error = server.error)
     }
 
+    @Suppress("UNUSED_PARAMETER")
     private fun merge(
         cache: RequestResult.Success<T>,
         server: RequestResult.InProgress<T>
@@ -85,6 +90,7 @@ internal class DefaultMergeStrategy<T : Any> : MergeStrategy<RequestResult<T>> {
         return RequestResult.InProgress(cache.data)
     }
 
+    @Suppress("UNUSED_PARAMETER")
     private fun merge(
         cache: RequestResult.Success<T>,
         server: RequestResult.Success<T>

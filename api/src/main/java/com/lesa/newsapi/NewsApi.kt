@@ -9,7 +9,6 @@ import com.lesa.newsapi.models.SortBy
 import com.lesa.newsapi.utils.NewsApiKeyInterceptor
 import com.skydoves.retrofit.adapters.result.ResultCallAdapterFactory
 import kotlinx.serialization.json.Json
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -23,6 +22,7 @@ interface NewsApi {
 
     // API details: https://newsapi.org/docs/endpoints/everything)
     @GET(EVERYTHING)
+    @Suppress("LongParameterList")
     suspend fun getAllArticles(
         @Query(Q) query: String? = null,
         @Query(FROM) from: Date? = null,
@@ -31,7 +31,7 @@ interface NewsApi {
         @Query(SORT_BY) sortBy: SortBy? = null,
         @Query(PAGE_SIZE) @IntRange(from = 1, to = 100) pageSize: Int = 100,
         @Query(PAGE) @IntRange(from = 1) page: Int = 1,
-        ): Result<ResponseDTO<ArticleDTO>>
+    ): Result<ResponseDTO<ArticleDTO>>
 }
 
 fun NewsApi(
@@ -39,7 +39,7 @@ fun NewsApi(
     baseUrl: String,
     json: Json = Json,
     okHttpClient: OkHttpClient? = null,
-) : NewsApi {
+): NewsApi {
     return retrofit(
         apiKey = apiKey,
         baseUrl = baseUrl,

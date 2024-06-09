@@ -1,7 +1,4 @@
-package com.lesa.features.news_main.models
-
-import com.lesa.news_data.models.Source
-import java.util.Date
+package com.lesa.features.main.models
 
 internal data class ArticleUI(
     val id: Long?,

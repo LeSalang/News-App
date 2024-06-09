@@ -16,5 +16,4 @@ fun androidLogcatLogger(): Logger = object : Logger {
     override fun e(tag: String, message: String) {
         Log.e(tag, message)
     }
-
 }

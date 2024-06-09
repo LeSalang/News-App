@@ -1,9 +1,9 @@
-package com.lesa.news_data
+package com.lesa.data
 
 import com.lesa.common.Logger
+import com.lesa.data.models.Article
 import com.lesa.database.NewsDatabase
 import com.lesa.database.models.ArticleDBO
-import com.lesa.news_data.models.Article
 import com.lesa.newsapi.NewsApi
 import com.lesa.newsapi.models.ArticleDTO
 import com.lesa.newsapi.models.ResponseDTO
@@ -90,7 +90,7 @@ class ArticlesRepository @Inject constructor(
                         articleDTO.toArticle()
                     }
                 }
-        }
+            }
     }
 
     private suspend fun saveNetResponseToCache(data: List<ArticleDTO>) {

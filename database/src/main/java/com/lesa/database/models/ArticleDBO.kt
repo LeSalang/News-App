@@ -27,6 +27,3 @@ data class ArticleDBO(
     @ColumnInfo("content")
     val content: String?
 )
-
-
-

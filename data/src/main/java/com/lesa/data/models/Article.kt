@@ -1,4 +1,4 @@
-package com.lesa.news_data.models
+package com.lesa.data.models
 
 import java.util.Date
 
